@@ -1,0 +1,101 @@
+/* universal properties */
+body, html {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  font-family:  'Goblin One', cursive;
+  /* font-family rule from Google Fonts API */
+  font-weight: 500%;
+  color: white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Source Sans Pro', sans-serif;
+
+}
+
+.hero-image {
+  background-image: url("coding.gif");
+  height: 30%;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+}
+
+/* Center the text over the image. */
+.hero-text {
+  vertical-align: middle;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  color: none;
+}
+
+div.stuff {
+  width: 500px;
+  /* height: fit-content; */
+  word-wrap: normal;
+  text-align: center;
+  border-color: none;
+}
+
+div#first {
+  background-color: none;
+  /* purle */
+}
+
+div#second {
+  background-color: #7B7672;
+  /* gray */
+}
+
+div#third {
+  background-color: #A6654E;
+  /* rust */
+}
+
+div#fourth {
+  background-color: #543F35;
+  /* brown */
+}
+
+div#fifth {
+  background-color: #D99789;
+  /* pink */
+}
+
+/* style the navbar */
+#navbar {
+  overflow: visible;
+  background-color: none;
+}
+
+/* navbar links */
+#navbar a {
+  float: left;
+  display: block;
+  color: white;
+  font-family: 'Goblin One', cursive;
+  text-align: center;
+  padding: 50px;
+  text-decoration: none;
+}
+
+#navbar a:hover {
+  color: blue;
+  background-color: none;
+}
+
+/* The sticky class is added to the navbar with JS when it reaches its scroll position */
+.sticky {
+  position: fixed;
+  top: 0;
+  width: 100%;
+}
+
+/* Add some top padding to the page content to prevent sudden quick movement (as the navigation bar gets a new position at the top of the page (position:fixed and top:0) */
+.sticky + .content {
+  padding-top: 60px;
+}

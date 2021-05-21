@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>My PERSONAL WEBSITE</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Goblin+One&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div class="hero-image">
+      <div class="hero-text">
+        <h1>Welcome User!</h1>
+</div>
+</div>
+<div id="navbar">
+  <a href="homepage.html">Home</a>
+  <a href="aboutme.html">About me</a>
+  <a href="myportfolio.html">My Portfolio</a>
+  <a href="contact.html">Contact</a>
+  <br>
+  <p style="float:right;"><img src="pablo.jpg" height="400px" width="400px" border="8px"></p>
+  <br>
+  <br>
+  <body style="background-color: Gray">
+    <canvas id="sketch" width="480" height="720"></canvas>
+      <script>
+      document.addEventListener('DOMContentLoaded', main);
+
+      var sketch;
+      var context;
+      var circle = {'x':0, 'y':100, 'r':25};
+      var dy = 0.9;
+      var dy = 0.9;
+      var fps = 10;
+
+        function main() {
+        sketch = document.getElementById('sketch');
+        context = sketch.getContext("2d");
+        circle = {'x':25, 'y':sketch.offsetHeight/2, 'r':25};
+        setInterval(animate, fps);
+    }
+
+      function animate() {
+        context.clearRect(0, 0, sketch.offsetWidth, sketch.offsetHeight);
+        draw_circle(circle.x, circle.y, circle.r); // function call to our new function draw_circle()
+        circle.x = circle.x + dy;
+        circle.y = circle.y + dy;
+        if(circle.x > sketch.offsetWidth - dy - circle.r || circle.x < circle.r - dy)
+    			{
+    				dy = dy * 1;
+    			}
+    			circle.y = circle.y + dy;
+    			if(circle.y > sketch.offsetWidth - dy - circle.r || circle.y < circle.r - dy)
+    			{
+    				dy = dy * -1;
+    			}
+    		}
+      function draw_circle(x,y,r) {
+        context.beginPath();
+        context.arc(x, y, r, 0, 2 * Math.PI, true);
+        context.closePath();
+        context.fill();
+      }
+        </script>
+        </body>
+</style>
+</html>
